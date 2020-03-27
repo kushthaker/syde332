@@ -26,6 +26,8 @@ def plotter_c_2(figure, sets, title):
 
 step = 0.1
 
+# PART A
+
 points_a = [(3*np.random.random_sample(), 2*np.random.random_sample()) for i in range(0,100)]
 sets_a = [[pt] + 99*[None] for pt in points_a]
 
@@ -41,6 +43,8 @@ for i in range(0, len(sets_a)):
 			sets_a[i][j+1] = (x_next,y_next)
 
 plotter(1, sets_a, 'Part A: Competing Dynamics Model')
+
+# PART B
 
 points_b = [(1*np.random.random_sample(), 1*np.random.random_sample()) for i in range(0,100)]
 sets_b = [[pt] + 99*[None] for pt in points_b]
@@ -59,6 +63,8 @@ for i in range(0, len(sets_b)):
 
 plotter(2, sets_b, 'Part B: Predator–Prey Model')
 
+# PART C_2
+
 thetas_c_2 = [round(x,1) for x in list(np.arange(0,1.1,0.1))]
 fixed_points_c_2 = [(theta, theta/(0.1+theta**2)) for theta in thetas_c_2]
 sets_c_2 = []
@@ -69,6 +75,8 @@ for pt in fixed_points_c_2:
 	sets_c_2.append([delta, tao])
 
 plotter_c_2(3, sets_c_2, 'Part C-2: Tao-Delta Plot')
+
+# PART C_4
 
 points_c_4 = [(1*np.random.random_sample(), 1*np.random.random_sample()) for i in range(0,5)]
 thetas_c_4 = [0.1, 0.5, 1]
@@ -87,23 +95,3 @@ for theta in thetas_c_4:
 				sets_c_4[i][j+1] = (x_next,y_next)
 
 	plotter(4, sets_c_4, 'Part C: Selkov Model')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
